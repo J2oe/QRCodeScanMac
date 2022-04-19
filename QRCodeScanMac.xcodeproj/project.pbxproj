@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D895A2DC280E3FAC00DD2EE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2DB280E3FAC00DD2EE3 /* AppDelegate.swift */; };
-		D895A2DE280E3FAC00DD2EE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2DD280E3FAC00DD2EE3 /* ViewController.swift */; };
+		D895A2DE280E3FAC00DD2EE3 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2DD280E3FAC00DD2EE3 /* ImageViewController.swift */; };
 		D895A2E0280E3FAE00DD2EE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D895A2DF280E3FAE00DD2EE3 /* Assets.xcassets */; };
 		D895A2E3280E3FAE00DD2EE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D895A2E1280E3FAE00DD2EE3 /* Main.storyboard */; };
 		D895A2EE280E3FAE00DD2EE3 /* QRCodeScanMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2ED280E3FAE00DD2EE3 /* QRCodeScanMacTests.swift */; };
 		D895A2F8280E3FAE00DD2EE3 /* QRCodeScanMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2F7280E3FAE00DD2EE3 /* QRCodeScanMacUITests.swift */; };
 		D895A2FA280E3FAE00DD2EE3 /* QRCodeScanMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2F9280E3FAE00DD2EE3 /* QRCodeScanMacUITestsLaunchTests.swift */; };
+		D895A30B280E40BD00DD2EE3 /* ImageCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A30A280E40BD00DD2EE3 /* ImageCanvas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		D895A2D8280E3FAC00DD2EE3 /* QRCodeScanMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D895A2DB280E3FAC00DD2EE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D895A2DD280E3FAC00DD2EE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D895A2DD280E3FAC00DD2EE3 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		D895A2DF280E3FAE00DD2EE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D895A2E2280E3FAE00DD2EE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D895A2E4280E3FAE00DD2EE3 /* QRCodeScanMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QRCodeScanMac.entitlements; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		D895A2F3280E3FAE00DD2EE3 /* QRCodeScanMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeScanMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D895A2F7280E3FAE00DD2EE3 /* QRCodeScanMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanMacUITests.swift; sourceTree = "<group>"; };
 		D895A2F9280E3FAE00DD2EE3 /* QRCodeScanMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D895A30A280E40BD00DD2EE3 /* ImageCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCanvas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +134,8 @@
 		D895A307280E3FDF00DD2EE3 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D895A2DD280E3FAC00DD2EE3 /* ViewController.swift */,
+				D895A30A280E40BD00DD2EE3 /* ImageCanvas.swift */,
+				D895A2DD280E3FAC00DD2EE3 /* ImageViewController.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -267,8 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D895A2DE280E3FAC00DD2EE3 /* ViewController.swift in Sources */,
+				D895A2DE280E3FAC00DD2EE3 /* ImageViewController.swift in Sources */,
 				D895A2DC280E3FAC00DD2EE3 /* AppDelegate.swift in Sources */,
+				D895A30B280E40BD00DD2EE3 /* ImageCanvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
