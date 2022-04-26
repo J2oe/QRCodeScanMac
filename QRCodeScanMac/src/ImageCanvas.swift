@@ -13,9 +13,17 @@ protocol ImageCanvsDelegate: AnyObject {
     func draggingEnd(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo)
 }
 
+enum DragStatus {
+case none
+case entered
+case exited
+}
+
 class ImageCanvas: NSImageView {
     
     @IBOutlet weak var delegate: ImageCanvsDelegate?
+    
+    var status: DragStatus = .none
     
     private func handleImage(at url: URL) {
         print("\(#fileID) \(#function) \(#line).")
@@ -41,6 +49,7 @@ class ImageCanvas: NSImageView {
     // MARK: - NSDraggingDestination
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         print("\(#fileID) \(#function) \(#line).")
+        self.status = .entered
         
         let result = sender.draggingSourceOperationMask.intersection([.copy])
         return result
@@ -78,9 +87,16 @@ class ImageCanvas: NSImageView {
         return true
     }
     
+    override func draggingExited(_ sender: NSDraggingInfo?) {
+        print("\(#fileID) \(#function) \(#line).")
+        self.status = .exited
+    }
+    
     override func draggingEnded(_ sender: NSDraggingInfo) {
         print("\(#fileID) \(#function) \(#line).")
         
-        delegate?.draggingEnd(self, sender: sender)
+        if self.status == .entered {
+            delegate?.draggingEnd(self, sender: sender)
+        }
     }
 }
