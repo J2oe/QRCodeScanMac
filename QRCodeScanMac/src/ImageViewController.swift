@@ -37,10 +37,13 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
         } else {
             self.imageCanvas.image = nil
             self.accessoryLabel.isHidden = false
+            self.syncTopreviewViewController(nil)
         }
     }
 
     func decterQRCode(_ image: NSImage) -> String? {
+        print("\(#fileID) \(#function) \(#line).")
+        
         let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil)
         guard let features = detector?.features(in: CIImage(cgImage: image.cgImage(forProposedRect: nil, context: nil, hints: nil)!)) else {
             return nil
@@ -53,6 +56,8 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
     }
     
     func openURLString(_ urlString: String) {
+        print("\(#fileID) \(#function) \(#line).")
+        
         guard let url = URL(string: urlString) else {
             return
         }
@@ -62,19 +67,41 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
     }
     
     // MARK: - ImageCanvsDelegate
-    func draggingFinished(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo) {
-        guard (imageCanvas.image != nil) else {
+    func draggingFinished(_ aImageCanvas: ImageCanvas, sender: NSDraggingInfo) {
+        print("\(#fileID) \(#function) \(#line).")
+        
+        let content = self .convertQRCodeContent(aImageCanvas)
+        
+        // TODO: 配置可直接打开，或者显示预览
+        self.syncTopreviewViewController(content)
+//        self.openURLString(content)
+    }
+    
+    func convertQRCodeContent(_ aImageCanvas: ImageCanvas) -> String {
+        guard (aImageCanvas.image != nil) else {
             self.accessoryLabel.isHidden = false
-            return
+            return ""
         }
         self.accessoryLabel.isHidden = true
         
-        guard let string = self.decterQRCode(imageCanvas.image!) else {
-            return
+        guard let string = self.decterQRCode(aImageCanvas.image!) else {
+            return ""
         }
         
-        self.openURLString(string)
+        return string
     }
-
+    
+    // MARK: - PreviewViewController
+    func syncTopreviewViewController(_ string: String?) {
+        print("\(#fileID) \(#function) \(#line). \(string ?? "")")
+        
+        guard let rootVC: NSSplitViewController = self.parent as? NSSplitViewController else {
+            return
+        }
+        guard let previewVC: PreviewViewController = rootVC.splitViewItems.last?.viewController as? PreviewViewController else {
+            return
+        }
+        previewVC.messageString = string
+    }
 }
 

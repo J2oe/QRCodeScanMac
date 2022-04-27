@@ -15,6 +15,7 @@
 		D895A2F8280E3FAE00DD2EE3 /* QRCodeScanMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2F7280E3FAE00DD2EE3 /* QRCodeScanMacUITests.swift */; };
 		D895A2FA280E3FAE00DD2EE3 /* QRCodeScanMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A2F9280E3FAE00DD2EE3 /* QRCodeScanMacUITestsLaunchTests.swift */; };
 		D895A30B280E40BD00DD2EE3 /* ImageCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895A30A280E40BD00DD2EE3 /* ImageCanvas.swift */; };
+		D8D9A222281961F200B3C934 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9A221281961F200B3C934 /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D895A2F7280E3FAE00DD2EE3 /* QRCodeScanMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanMacUITests.swift; sourceTree = "<group>"; };
 		D895A2F9280E3FAE00DD2EE3 /* QRCodeScanMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D895A30A280E40BD00DD2EE3 /* ImageCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCanvas.swift; sourceTree = "<group>"; };
+		D8D9A221281961F200B3C934 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				D895A30A280E40BD00DD2EE3 /* ImageCanvas.swift */,
 				D895A2DD280E3FAC00DD2EE3 /* ImageViewController.swift */,
+				D8D9A221281961F200B3C934 /* PreviewViewController.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				D895A2DE280E3FAC00DD2EE3 /* ImageViewController.swift in Sources */,
 				D895A2DC280E3FAC00DD2EE3 /* AppDelegate.swift in Sources */,
 				D895A30B280E40BD00DD2EE3 /* ImageCanvas.swift in Sources */,
+				D8D9A222281961F200B3C934 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
