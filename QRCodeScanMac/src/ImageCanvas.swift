@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 @objc
 protocol ImageCanvsDelegate: AnyObject {
-    func draggingEnd(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo)
+    func draggingFinished(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo)
 }
 
 enum DragStatus {
@@ -96,7 +96,7 @@ class ImageCanvas: NSImageView {
         print("\(#fileID) \(#function) \(#line).")
         
         if self.status == .entered {
-            delegate?.draggingEnd(self, sender: sender)
+            delegate?.draggingFinished(self, sender: sender)
         }
     }
 }

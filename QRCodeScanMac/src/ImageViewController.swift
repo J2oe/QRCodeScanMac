@@ -62,7 +62,7 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
     }
     
     // MARK: - ImageCanvsDelegate
-    func draggingEnd(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo) {
+    func draggingFinished(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo) {
         guard (imageCanvas.image != nil) else {
             self.accessoryLabel.isHidden = false
             return
