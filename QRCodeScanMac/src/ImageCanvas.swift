@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 @objc
 protocol ImageCanvsDelegate: AnyObject {
-    func draggingFinished(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo)
+    func draggingFinished(_ imageCanvas: ImageCanvas, sender: NSDraggingInfo?)
 }
 
 enum DragStatus {
@@ -25,24 +25,27 @@ class ImageCanvas: NSImageView {
     
     var status: DragStatus = .none
     
+    public func assignImageUrl(at url: URL) {
+        print("\(#fileID) \(#function) \(#line). url: \(url)")
+        
+        self.handleImage(at: url)
+        self.delegate?.draggingFinished(self, sender: nil)
+    }
+    
     private func handleImage(at url: URL) {
-        print("\(#fileID) \(#function) \(#line).")
+        print("\(#fileID) \(#function) \(#line). url: \(url)")
         
         let image = NSImage(contentsOf: url)
-        OperationQueue.main.addOperation {
-            self.image = image
-        }
+        self.image = image
     }
     
     private func handleError(_ error: Error) {
         print("\(#fileID) \(#function) \(#line).")
         
-        OperationQueue.main.addOperation {
-            if let window = self.window {
-                self.presentError(error, modalFor: window, delegate: nil, didPresent: nil, contextInfo: nil)
-            } else {
-                self.presentError(error)
-            }
+        if let window = self.window {
+            self.presentError(error, modalFor: window, delegate: nil, didPresent: nil, contextInfo: nil)
+        } else {
+            self.presentError(error)
         }
     }
     

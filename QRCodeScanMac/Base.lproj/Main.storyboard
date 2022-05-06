@@ -751,9 +751,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Hs4-s9-k8g">
-                                <rect key="frame" x="20" y="70" width="230" height="210"/>
+                                <rect key="frame" x="20" y="258" width="230" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="UIT-td-xWx"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="210" id="UIT-td-xWx"/>
                                 </constraints>
                                 <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" bezelStyle="round" id="0JQ-CH-2dX">
                                     <font key="font" metaFont="system"/>
@@ -774,6 +774,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="zIO-5Y-fGu" firstAttribute="leading" secondItem="FIy-7e-d7x" secondAttribute="leading" constant="70" id="1hs-lw-88a"/>
+                            <constraint firstItem="zIO-5Y-fGu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hs4-s9-k8g" secondAttribute="bottom" constant="18" id="2DP-vo-s73"/>
                             <constraint firstAttribute="bottom" secondItem="zIO-5Y-fGu" secondAttribute="bottom" constant="20" symbolic="YES" id="ShJ-hn-krp"/>
                             <constraint firstAttribute="trailing" secondItem="Hs4-s9-k8g" secondAttribute="trailing" constant="20" symbolic="YES" id="aiD-4q-5Cr"/>
                             <constraint firstItem="Hs4-s9-k8g" firstAttribute="top" secondItem="FIy-7e-d7x" secondAttribute="top" constant="20" symbolic="YES" id="hKa-HE-tI1"/>

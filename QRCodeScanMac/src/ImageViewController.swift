@@ -34,6 +34,7 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
         
         if self.imageCanvas.image == nil {
             // TODO: 显示文件选择窗口
+            self.trySelectImage()
         } else {
             self.imageCanvas.image = nil
             self.accessoryLabel.isHidden = false
@@ -41,6 +42,21 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
         }
     }
 
+    func trySelectImage() {
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseFiles = true
+        openPanel.canChooseDirectories = false
+        openPanel.allowsMultipleSelection = false
+        openPanel.begin { resp in
+            print("resp: \(resp)")
+            
+            if (resp == .OK) {
+                let url = openPanel.url!
+                self.imageCanvas.assignImageUrl(at: url)
+            }
+        }
+    }
+    
     func decterQRCode(_ image: NSImage) -> String? {
         print("\(#fileID) \(#function) \(#line).")
         
@@ -67,14 +83,13 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
     }
     
     // MARK: - ImageCanvsDelegate
-    func draggingFinished(_ aImageCanvas: ImageCanvas, sender: NSDraggingInfo) {
+    func draggingFinished(_ aImageCanvas: ImageCanvas, sender: NSDraggingInfo?) {
         print("\(#fileID) \(#function) \(#line).")
         
         let content = self .convertQRCodeContent(aImageCanvas)
         
         // TODO: 配置可直接打开，或者显示预览
         self.syncTopreviewViewController(content)
-//        self.openURLString(content)
     }
     
     func convertQRCodeContent(_ aImageCanvas: ImageCanvas) -> String {

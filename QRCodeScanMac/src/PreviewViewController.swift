@@ -15,10 +15,19 @@ class PreviewViewController: NSViewController {
     
     public var messageString: String? {
         didSet {
-            self.messageTextField.stringValue = messageString ?? ""
-            
-            self.visitButton.isHidden = false
-            self.visitButton.isEnabled = (messageString != nil)
+            if messageString == nil || messageString!.count == 0 {
+                self.messageTextField.isHidden = true
+                self.messageTextField.stringValue = ""
+                
+                self.visitButton.isHidden = true
+                self.visitButton.isEnabled = false
+            } else {
+                self.messageTextField.isHidden = false
+                self.messageTextField.stringValue = messageString!
+                
+                self.visitButton.isHidden = false
+                self.visitButton.isEnabled = true
+            }
         }
     }
     
@@ -27,6 +36,7 @@ class PreviewViewController: NSViewController {
         // Do view setup here.
         self.messageTextField.isEditable = false
         self.messageTextField.isBordered = false
+        self.messageTextField.isHidden = true
         
         self.visitButton.title = "Visit"
         self.visitButton.isHidden = true
