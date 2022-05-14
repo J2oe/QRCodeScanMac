@@ -13,7 +13,7 @@ class SplitViewController: NSSplitViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        self.preferredContentSize = CGSize(width: 520, height: 300)
+        self.preferredContentSize = CGSize(width: 520, height: 320)
     }
     
 }

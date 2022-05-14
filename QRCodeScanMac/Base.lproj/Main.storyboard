@@ -711,21 +711,22 @@
             <objects>
                 <viewController id="teF-Da-81N" customClass="ImageViewController" customModule="QRCodeScanMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="KuD-Q2-pEu">
-                        <rect key="frame" x="0.0" y="0.0" width="270" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Db1-Zk-yjp" customClass="ImageCanvas" customModule="QRCodeScanMac" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="230" height="260"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Db1-Zk-yjp" customClass="ImageCanvas" customModule="QRCodeScanMac" customModuleProvider="target">
+                                <rect key="frame" x="10" y="20" width="240" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="twL-I3-Fzn"/>
                                 <connections>
                                     <outlet property="delegate" destination="teF-Da-81N" id="0fI-gb-dWq"/>
                                 </connections>
                             </imageView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="lXS-vq-Zf1">
-                                <rect key="frame" x="18" y="125" width="234" height="50"/>
+                                <rect key="frame" x="10" y="125" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="40s-Lv-Ryv"/>
-                                    <constraint firstAttribute="width" constant="230" id="zlT-ll-kcM"/>
+                                    <constraint firstAttribute="width" constant="236" id="zlT-ll-kcM"/>
                                 </constraints>
                                 <textFieldCell key="cell" selectable="YES" alignment="center" id="QbN-Rd-pme">
                                     <font key="font" metaFont="system"/>
@@ -735,14 +736,9 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lXS-vq-Zf1" secondAttribute="trailing" constant="20" symbolic="YES" id="1i6-42-Imm"/>
-                            <constraint firstAttribute="bottom" secondItem="Db1-Zk-yjp" secondAttribute="bottom" constant="20" symbolic="YES" id="C06-1z-poc"/>
-                            <constraint firstItem="lXS-vq-Zf1" firstAttribute="leading" secondItem="KuD-Q2-pEu" secondAttribute="leading" constant="20" symbolic="YES" id="Mo7-tl-jsc"/>
+                            <constraint firstItem="lXS-vq-Zf1" firstAttribute="leading" secondItem="KuD-Q2-pEu" secondAttribute="leading" constant="12" id="Mo7-tl-jsc"/>
                             <constraint firstItem="lXS-vq-Zf1" firstAttribute="centerY" secondItem="KuD-Q2-pEu" secondAttribute="centerY" id="Ugj-n0-2Cj"/>
-                            <constraint firstItem="Db1-Zk-yjp" firstAttribute="leading" secondItem="KuD-Q2-pEu" secondAttribute="leading" constant="20" symbolic="YES" id="hyU-AS-y7P"/>
                             <constraint firstItem="lXS-vq-Zf1" firstAttribute="centerX" secondItem="KuD-Q2-pEu" secondAttribute="centerX" id="kLl-9M-1zg"/>
-                            <constraint firstItem="Db1-Zk-yjp" firstAttribute="top" secondItem="KuD-Q2-pEu" secondAttribute="top" constant="20" symbolic="YES" id="oH4-yQ-hoh"/>
-                            <constraint firstAttribute="trailing" secondItem="Db1-Zk-yjp" secondAttribute="trailing" constant="20" symbolic="YES" id="oxR-Ee-KMx"/>
                         </constraints>
                     </view>
                     <connections>

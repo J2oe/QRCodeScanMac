@@ -34,6 +34,8 @@ class PreviewViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        self.view.frame = NSRect(x: 0, y: 0, width: 260, height: 300);
+        
         self.messageTextField.isEditable = false
         self.messageTextField.isBordered = false
         self.messageTextField.isHidden = true

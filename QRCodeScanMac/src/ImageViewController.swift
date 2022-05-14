@@ -20,6 +20,8 @@ class ImageViewController: NSViewController, ImageCanvsDelegate {
         self.accessoryLabel.isEditable = false
         self.accessoryLabel.isSelectable = false
         self.accessoryLabel.placeholderString = "拖拽二维码图片，打开浏览器访问二维码关联地址。"
+        
+        self.view.frame = NSRect(x: 0, y: 0, width: 260, height: 300);
     }
 
     override var representedObject: Any? {
